@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO MASTER: CONFIGURAÇÃO PARA SÃO JOSÉ - SC -->
+    <title>GJ Informática | Assistência Técnica e Web Design em São José - SC</title>
+    <meta name="description" content="Especialistas em montagem de PC Gamer, conserto de notebooks e criação de sites profissionais em São José - SC. Atendimento ágil, qualificado e com garantia.">
+    <meta name="keywords" content="informática são josé sc, assistência técnica pc gamer são josé, conserto de notebook são josé, criação de sites são josé, web design são josé, manutenção de computadores barreiros">
+    <meta name="author" content="GJ Informática">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.gjinformatica.com.br">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body { font-family: 'Montserrat', sans-serif; background-color: #061626; color: #ffffff; -webkit-tap-highlight-color: transparent; overflow-x: hidden; }
+        .nav-blur { background: rgba(6, 22, 38, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0, 212, 255, 0.1); }
+        .accent-cyan { color: #00d4ff; }
+        
+        /* Portfolio Styles */
+        .portfolio-item { position: relative; overflow: hidden; border-radius: 1rem; aspect-ratio: 1/1; border: 1px solid rgba(0, 212, 255, 0.1); transition: all 0.4s ease; }
+        .portfolio-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        
+        .portfolio-overlay { 
+            position: absolute; inset: 0; 
+            background: linear-gradient(to top, rgba(6, 22, 38, 0.95) 0%, transparent 100%); 
+            display: flex; align-items: flex-end; padding: 1.25rem;
+            opacity: 0; transform: translateY(10px); transition: all 0.4s ease;
+        }
+        
+        /* Ativação por Hover (PC) e por Classe (Mobile via JS) */
+        .portfolio-item:hover img, .portfolio-item.is-visible img { transform: scale(1.1); filter: brightness(1.2); }
+        .portfolio-item:hover .portfolio-overlay, .portfolio-item.is-visible .portfolio-overlay { opacity: 1; transform: translateY(0); }
+
+        /* Service Cards */
+        .service-page-card {
+            background: rgba(10, 31, 51, 0.5);
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .service-page-card:hover, .service-page-card:active {
+            border-color: #00d4ff;
+            transform: translateY(-5px);
+            background: rgba(0, 212, 255, 0.05);
+        }
+
+        #mobile-menu { transition: all 0.3s ease-in-out; max-height: 0; overflow: hidden; }
+        #mobile-menu.active { max-height: 400px; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="fixed w-full z-50 nav-blur">
+        <nav class="container mx-auto px-6 py-5 flex justify-between items-center">
+            <div class="flex flex-col">
+                <span class="text-xl font-800 tracking-tighter leading-none uppercase">GJ <span class="accent-cyan">Informática</span></span>
+                <span class="text-[10px] uppercase tracking-[0.2em] text-gray-400">Tecnologia & Web Design</span>
+            </div>
+            
+            <div class="hidden md:flex items-center space-x-8 text-xs font-bold uppercase tracking-widest">
+                <a href="#servicos-detalhes" class="hover:text-cyan-400 transition">Todos os Serviços</a>
+                <a href="#portfolio" class="hover:text-cyan-400 transition">Portfólio</a>
+                <a href="#web" class="hover:text-cyan-400 transition">Web Design</a>
+                <a href="https://wa.me/5554991597470" class="bg-[#00d4ff] text-[#061626] px-6 py-2 rounded-full font-bold hover:scale-105 transition">Orçamento</a>
+            </div>
+
+            <button onclick="toggleMenu()" class="md:hidden text-2xl accent-cyan focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+
+        <div id="mobile-menu" class="md:hidden bg-[#061626] border-t border-white/5">
+            <div class="flex flex-col p-6 space-y-4 text-center text-xs font-bold uppercase tracking-widest">
+                <a href="#servicos-detalhes" onclick="toggleMenu()">Todos os Serviços</a>
+                <a href="#portfolio" onclick="toggleMenu()">Portfólio</a>
+                <a href="#web" onclick="toggleMenu()">Web Design</a>
+                <a href="https://wa.me/5554991597470" class="accent-cyan">Orçamento</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-40 pb-20 text-center relative">
+        <div class="container mx-auto px-6" data-aos="fade-up">
+            <img src="logo.jpg" alt="Logo GJ Informática" class="w-32 h-32 md:w-40 md:h-40 mx-auto mb-10 rounded-full border-2 border-cyan-500/50 shadow-2xl">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight uppercase">
+                Seus Especialistas em <br>
+                <span class="accent-cyan">Tecnologia e Web Design</span>
+            </h1>
+            <p class="text-gray-400 max-w-2xl mx-auto text-lg mb-10">
+                Atendimento ágil e qualificado em São José - SC.
+            </p>
+            <a href="https://wa.me/5554991597470" class="bg-[#00d4ff] text-[#061626] inline-flex items-center gap-3 px-10 py-4 rounded-xl font-bold text-lg hover:scale-105 transition active:scale-95 shadow-lg shadow-cyan-500/20">
+                <i class="fab fa-whatsapp text-2xl"></i> SOLICITAR ORÇAMENTO
+            </a>
+        </div>
+    </section>
+
+    <!-- Serviços -->
+    <section id="servicos-detalhes" class="py-24 bg-[#081b2e]">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-extrabold uppercase tracking-tight">Serviços <span class="accent-cyan">Disponíveis</span></h2>
+                <div class="h-1 w-20 bg-cyan-500 mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="service-page-card" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-laptop-medical text-3xl accent-cyan mb-6"></i>
+                    <h3 class="text-xl font-bold mb-4 uppercase">Assistência Técnica</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Reparo especializado em notebooks e desktops em São José.</p>
+                </div>
+                <div class="service-card service-page-card" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-broom text-3xl accent-cyan mb-6"></i>
+                    <h3 class="text-xl font-bold mb-4 uppercase">Limpeza & Térmica</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Limpeza interna completa e substituição de pasta térmica.</p>
+                </div>
+                <div class="service-card service-page-card" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-microchip text-3xl accent-cyan mb-6"></i>
+                    <h3 class="text-xl font-bold mb-4 uppercase">Upgrades</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Instalação de SSDs e memória RAM para máxima velocidade.</p>
+                </div>
+                <div class="service-card service-page-card" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-gamepad text-3xl accent-cyan mb-6"></i>
+                    <h3 class="text-xl font-bold mb-4 uppercase">Montagem PC Gamer</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Montagem profissional com cable management impecável.</p>
+                </div>
+                <div class="service-card service-page-card" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-shield-alt text-3xl accent-cyan mb-6"></i>
+                    <h3 class="text-xl font-bold mb-4 uppercase">Software & Office</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Instalação de sistemas e softwares profissionais com suporte.</p>
+                </div>
+                <div class="service-card service-page-card" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-laptop-code text-3xl accent-cyan mb-6"></i>
+                    <h3 class="text-xl font-bold mb-4 uppercase">Sites Profissionais</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Criação de landing pages e sites modernos e responsivos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfólio -->
+    <section id="portfolio" class="py-24">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold uppercase tracking-tight mb-16" data-aos="fade-up">Nosso <span class="accent-cyan">Portfólio</span></h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="portfolio-item" data-aos="zoom-in"><img src="foto1.jpg" alt="PC Gamer"><div class="portfolio-overlay"><span class="text-[10px] md:text-xs font-bold uppercase">Montagem PC Gamer RGB</span></div></div>
+                <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="100"><img src="foto2.jpg" alt="Hardware"><div class="portfolio-overlay"><span class="text-[10px] md:text-xs font-bold uppercase">Manutenção de Hardware</span></div></div>
+                <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="200"><img src="foto3.jpg" alt="Setup"><div class="portfolio-overlay"><span class="text-[10px] md:text-xs font-bold uppercase">Setup High-End Custom</span></div></div>
+                <div class="portfolio-item" data-aos="zoom-in"><img src="foto4.jpg" alt="Upgrade"><div class="portfolio-overlay"><span class="text-[10px] md:text-xs font-bold uppercase">Upgrade de Performance</span></div></div>
+                <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="100"><img src="foto5.jpg" alt="Limpeza"><div class="portfolio-overlay"><span class="text-[10px] md:text-xs font-bold uppercase">Limpeza e Pasta Térmica</span></div></div>
+                <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="200"><img src="foto6.jpg" alt="Workstation"><div class="portfolio-overlay"><span class="text-[10px] md:text-xs font-bold uppercase">Montagem Workstation</span></div></div>
+                <div class="portfolio-item" data-aos="zoom-in"><img src="foto7.jpg" alt="Notebook"><div class="portfolio-overlay"><span class="text-[10px] md:text-xs font-bold uppercase">Reparo de Notebooks</span></div></div>
+                <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="100"><img src="foto8.jpg" alt="Software"><div class="portfolio-overlay"><span class="text-[10px] md:text-xs font-bold uppercase">Otimização de Software</span></div></div>
+                <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="200"><img src="foto9.jpg" alt="GJ"><div class="portfolio-overlay"><span class="text-[10px] md:text-xs font-bold uppercase">Consultoria Técnica</span></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Web -->
+    <section id="web" class="py-24 bg-[#081b2e]">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2" data-aos="fade-right">
+                    <h2 class="text-4xl md:text-5xl font-extrabold mb-6 leading-tight uppercase">Criação de Sites e <span class="accent-cyan">Sistemas Web</span></h2>
+                    <p class="text-gray-400 text-lg mb-10">Desenvolvemos landing pages modernas em São José - SC.</p>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 p-4 bg-white/5 rounded-xl border border-white/10"><i class="fas fa-check-circle accent-cyan"></i><span class="font-bold text-xs uppercase tracking-widest">Sites Profissionais</span></div>
+                        <div class="flex items-center gap-4 p-4 bg-white/5 rounded-xl border border-white/10"><i class="fas fa-check-circle accent-cyan"></i><span class="font-bold text-xs uppercase tracking-widest">Mobile First</span></div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-6" data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&q=80&w=600" class="rounded-2xl h-64 w-full object-cover border border-white/10" alt="Dev">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=600" class="rounded-2xl h-64 w-full object-cover border border-white/10 md:mt-12" alt="Web">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (RESTAURADO CONFORME IMAGEM) -->
+    <footer class="py-20 bg-[#061626] text-center px-6">
+        <div data-aos="fade-up">
+            <p class="text-gray-500 uppercase tracking-[0.3em] text-[10px] mb-4">ONDE ESTAMOS</p>
+            <p class="text-white font-bold text-lg md:text-2xl mb-12">
+                Rua Adão Schmidt 1083, Barreiros - São José/SC
+            </p>
+            
+            <p class="text-gray-500 uppercase tracking-[0.3em] text-[10px] mb-4">FALE CONOSCO</p>
+            <a href="https://wa.me/5554991597470" class="text-white font-extrabold text-4xl md:text-6xl hover:text-cyan-400 transition inline-block mb-16">
+                54 99159 7470
+            </a>
+            
+            <p class="text-gray-600 text-[10px] uppercase tracking-widest">
+                © 2024 GJ INFORMÁTICA | ATENDIMENTO ÁGIL E QUALIFICADO EM SÃO JOSÉ - SC
+            </p>
+        </div>
+    </footer>
+
+    <!-- Botão WhatsApp -->
+    <a href="https://wa.me/5554991597470" target="_blank" class="fixed bottom-8 right-8 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl z-50 active:scale-90"><i class="fab fa-whatsapp"></i></a>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Inicializa animações de scroll
+        AOS.init({ duration: 1000, once: true, offset: 100 });
+
+        function toggleMenu() {
+            document.getElementById('mobile-menu').classList.toggle('active');
+        }
+
+        // SCRIPT PARA MOBILE: Mostra a legenda da foto quando ela passa pelo centro da tela
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.7 
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (window.innerWidth < 768) { 
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    } else {
+                        entry.target.classList.remove('is-visible');
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.portfolio-item').forEach(item => {
+            observer.observe(item);
+        });
+    </script>
+</body>
+</html>
